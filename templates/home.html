@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Ankieta dotycząca stresu
+{% endblock %}
+{% block content %}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-white" style="color:#100527">
+   <img src="https://img.freepik.com/free-vector/student-stress-concept-illustration_114360-9550.jpg?w=740&t=st=1679862770~exp=1679863370~hmac=bd7978d4c905348462ae6b18d51e4f756ad3a99d1cbb9f9f9fc9616505301d5a" height="500" width="500" class="rounded float-left" />
+   <div class="col-md-6 p-lg-5 mx-auto my-5"  >
+      <h1 class="display-4 font-weight-normal">Ankieta dotycząca oceny poziomu stresu wśród studentów</h1>
+      <p class="lead font-weight-normal">Celem podjętych badań będzie poznanie przyczyn, objawów oraz metod
+         skutecznego radzenia sobie ze stresem, wśród studentów.
+      </p>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('poll_page') }}">
+         Start 
+         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+         </svg>
+      </a>
+   </div>
+   <div class="product-device box-shadow d-none d-md-block"></div>
+   <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
+{% endblock %}
