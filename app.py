@@ -1,6 +1,6 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, request
 
-from database import load_jobs_from_db
+from database import load_jobs_from_db, add_application_to_db, load_genders_from_db
 
 app = Flask(__name__)
 
@@ -14,7 +14,9 @@ def home():
 @app.route("/poll")
 def poll_page():
     firsquestion = load_jobs_from_db()
-    return render_template('poll.html', firsquestion=firsquestion)
+    genders = load_genders_from_db()
+    return render_template('poll.html', firsquestion=firsquestion, genders = genders)  
+
 
 # @app.route("/api/poll")
 # def list_page():
@@ -24,6 +26,21 @@ def poll_page():
 @app.route("/final")
 def final_page():   
     return render_template('final.html')
+
+@app.route("/poll/final", methods=['post'])
+def submit_page():   
+  data = request.form
+  #print(data['first_question'], data['second_question'])
+  
+
+  add_application_to_db(data)
+  #add_application_to_db(data)
+  return render_template('final.html', data=data)
+
+# @app.route("/poll/<id>")
+# def show_job(id):
+#   job = load_job_from_db(id)
+#   return jsonify(job)
 
 
 if __name__ == "__main__":

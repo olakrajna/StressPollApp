@@ -3,32 +3,110 @@
 Ankieta dotycząca stresu
 {% endblock %}
 {% block content %}
-
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-white" style="color:#100527">
-<h2 text-align="center">Ankieta dotycząca stresu. Zapraszam do wypłenienia poniższego formularza.</h2><br/>
-    <div class="row">
-        <div class="col-md-6">
-            <form method="post" id="poll_form">
-                <h3>1. Płeć:</h3>
-              {%for first in firsquestion%}
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-white" style="color:#100527">
+   <h2 text-align="center">Ankieta dotycząca stresu. Zapraszam do wypłenienia poniższego formularza.</h2>
+   <br/>
+   <div class="row">
+      <div class="col-md-6">
+         <form action="/poll/final" method="post">
+          <h3>1. Płeć:</h3>           
+            {%for gender in genders%}
                 <div class="radio">
-                    <label><h4>
-                      <input type="radio" name="poll_option" class="poll_option" value="Kobieta">{{first.title}} <br/>
-</h4></label>                  
+                    <label><h5>
+                      <input type="radio" name="gender" value="{{gender.gender}}"> {{gender.gender}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+           
+            <h3>1. Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?</h3>           
+            {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="first_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+            <h3>2. Jak często w ciągu ostatniego miesiąca czułeś/aś, że ważne sprawy w twoim życiu
+               wymykają ci się spod kontroli?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+                 <h3>3. Jak często w ciągu ostatniego miesiąca odczuwałeś/aś zdenerwowanie i napięcie?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="third_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+                     <h3>4. Jak często w ciągu ostatniego miesiąca byłeś/aś przekonany/a, że jesteś w stanie poradzić
+sobie z problemami osobistymi?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="fourth_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+  <h3>5. Jak często w ciągu ostatniego miesiąca czułeś/aś, że sprawy układają się po twojej myśli?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="fifth_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+                <h3>6. Jak często w ciągu ostatniego miesiąca stwierdzałeś/aś, że nie radzisz sobie ze wszystkimi obowiązkami?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="sixth_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+  <h3>7. Jak często w ciągu ostatniego miesiąca potrafiłeś/aś opanować swoje rozdrażnienie?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+  <h3>8. Jak często w ciągu ostatniego miesiąca czułeś/aś, że wszystko ci wychodzi?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+      <h3>9. Jak często w ciągu ostatniego miesiąca złościłeś/aś się, ponieważ nie miałeś/aś wpływu na
+to co się zdarzyło?
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
                 </div>
               {% endfor %}
 
-                   <a class="btn btn-primary btn-lg" href="{{ url_for('final_page') }}">
-         Prześlij 
-         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
-         </svg>
-                   </a>
-            </form>
-        </div>
+          <h3>10. Jak często w ciągu ostatniego miesiąca czułeś/aś, że nie możesz przezwyciężyć narastających trudności?
 
-    </div>
-
+             {%for first in firsquestion%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+                  
+            <input type="submit">
+         </form>
+      </div>
+   </div>
 </div>
-
 {% endblock %}
