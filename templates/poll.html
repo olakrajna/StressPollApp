@@ -17,7 +17,22 @@ Ankieta dotycząca stresu
                     </h5></label>                  
                 </div>
               {% endfor %}
-           
+               <h3>2. Rodzaj studiów:</h3>           
+            {%for study in typesofstudies%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="typesofstudies" value="{{study.typeofstudies}}"> {{study.typeofstudies}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+              <h3>2. Rok studiów:</h3>           
+            {%for years in yearofstudy%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="yearofstudy" value="{{years.studyyear}}"> {{years.studyyear}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
             <h3>1. Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?</h3>           
             {%for first in firsquestion%}
                 <div class="radio">
@@ -72,7 +87,7 @@ sobie z problemami osobistymi?
              {%for first in firsquestion%}
                 <div class="radio">
                     <label><h5>
-                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                      <input type="radio" name="seventh_question" value="{{first.title}}"> {{first.title}}
                     </h5></label>                  
                 </div>
               {% endfor %}
@@ -80,7 +95,7 @@ sobie z problemami osobistymi?
              {%for first in firsquestion%}
                 <div class="radio">
                     <label><h5>
-                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                      <input type="radio" name="eighth_question" value="{{first.title}}"> {{first.title}}
                     </h5></label>                  
                 </div>
               {% endfor %}
@@ -89,7 +104,7 @@ to co się zdarzyło?
              {%for first in firsquestion%}
                 <div class="radio">
                     <label><h5>
-                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                      <input type="radio" name="ninth_question" value="{{first.title}}"> {{first.title}}
                     </h5></label>                  
                 </div>
               {% endfor %}
@@ -99,12 +114,12 @@ to co się zdarzyło?
              {%for first in firsquestion%}
                 <div class="radio">
                     <label><h5>
-                      <input type="radio" name="second_question" value="{{first.title}}"> {{first.title}}
+                      <input type="radio" name="tenth_question" value="{{first.title}}"> {{first.title}}
                     </h5></label>                  
                 </div>
               {% endfor %}
                   
-            <input type="submit">
+            <input type="submit" class="btn btn-primary">
          </form>
       </div>
    </div>
