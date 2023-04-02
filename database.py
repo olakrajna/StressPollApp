@@ -21,6 +21,14 @@ def load_jobs_from_db():
     for row in result.all():
       firstquestion.append(row)
     return firstquestion
+
+def load_ourquestions_from_db():
+  with engine.connect() as conn:
+    result = conn.execute(text("select * from ourquestions"))
+    ourquestions = []
+    for row in result.all():
+      ourquestions.append(row)
+    return ourquestions
     
 def load_genders_from_db():
   with engine.connect() as conn:
@@ -67,7 +75,7 @@ def load_yearofstudy_from_db():
 
 def add_application_to_db(data):
   with engine.connect() as conn:
-    query = text("INSERT INTO applicationn (gender, typesofstudies, yearofstudy, first_question, second_question, third_question, fourth_question, fifth_question, sixth_question, seventh_question, eighth_question, ninth_question,    tenth_question) VALUES (:gender, :first_question, :second_question, :third_question, :fourth_question, :fifth_question, :sixth_question, :seventh_question, :eighth_question, :ninth_question, :tenth_question)") 
+    query = text("INSERT INTO applicationn (gender, typesofstudies, yearofstudy, first_question, second_question, third_question, fourth_question, fifth_question, sixth_question, seventh_question, eighth_question, ninth_question, tenth_question) VALUES (:gender, :typesofstudies, :yearofstudy,  :first_question, :second_question, :third_question, :fourth_question, :fifth_question, :sixth_question, :seventh_question, :eighth_question, :ninth_question, :tenth_question)") 
     conn.execute(query, {'gender': data['gender'], 'typesofstudies' : data['typesofstudies'], 'yearofstudy' : data['yearofstudy'], 'first_question': data['first_question'],'second_question': data['second_question'], 'third_question' : data['third_question'], 'fourth_question' : data['fourth_question'], 'fifth_question' : data['fifth_question'], 'sixth_question': data['sixth_question'] , 'seventh_question': data['seventh_question'], 'eighth_question': data['eighth_question'], 'ninth_question': data['ninth_question'],'tenth_question' : data['tenth_question']})
             
 

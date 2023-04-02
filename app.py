@@ -1,11 +1,8 @@
 from flask import Flask, render_template, request
 
-from database import load_jobs_from_db, add_application_to_db, load_genders_from_db, load_typesofstudies_from_db, load_yearofstudy_from_db
+from database import load_jobs_from_db, add_application_to_db, load_genders_from_db, load_typesofstudies_from_db, load_yearofstudy_from_db, load_ourquestions_from_db
 
 app = Flask(__name__)
-
-
-
 
 @app.route("/")
 def home():
@@ -16,8 +13,9 @@ def poll_page():
     firsquestion = load_jobs_from_db()
     genders = load_genders_from_db()
     typesofstudies = load_typesofstudies_from_db()
-    yearofstudy = load_yearofstudy_from_db()
-    return render_template('poll.html', firsquestion=firsquestion, genders = genders, typesofstudies=typesofstudies, yearofstudy=yearofstudy)  
+    yearofstudy = load_yearofstudy_from_db() 
+    ourquestions = load_ourquestions_from_db()
+    return render_template('poll.html', firsquestion=firsquestion, genders = genders, typesofstudies=typesofstudies, yearofstudy=yearofstudy, ourquestions=ourquestions)  
 
 
 # @app.route("/api/poll")
