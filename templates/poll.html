@@ -110,7 +110,6 @@ to co się zdarzyło?
               {% endfor %}
 
           <h3>13. Jak często w ciągu ostatniego miesiąca czułeś/aś, że nie możesz przezwyciężyć narastających trudności?
-
              {%for first in firsquestion%}
                 <div class="radio">
                     <label><h5>
@@ -119,7 +118,6 @@ to co się zdarzyło?
                 </div>
               {% endfor %}
            <h3>14. Czy Twoje zmartwienia dotyczące przyszłości zawodowej wpływają na Twój poziom stresu?
-
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -191,7 +189,7 @@ to co się zdarzyło?
                       <input type="radio" name="twentieth_question" value="{{quest.question}}" required> {{quest.question}}
                     </h5></label>                  
                 </div>
-              {% endfor %}                         
+              {% endfor %}                      
                   
 
             <input type="submit" class="btn btn-primary btn-lg">
