@@ -3,8 +3,12 @@
 Ankieta dotycząca stresu
 {% endblock %}
 {% block content %}
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-white" style="color:#100527">
-   <h2 text-align="center">Ankieta dotycząca stresu. Zapraszam do wypłenienia poniższego formularza.</h2>
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-white module-border-wrap" style="color:#100527">  
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-white" style="color:#100527"><img src="https://img.freepik.com/free-vector/website-faq-section-user-help-desk-customer-support-frequently-asked-questions-problem-solution-quiz-game-confused-man-cartoon-character_335657-1602.jpg?w=826&t=st=1680477239~exp=1680477839~hmac=ec56362b8bff1cd95c97c3eebabbcd46b778c9c5ae951f04abf8db4af775dd8f" height="250" width="250" class="rounded float-left" />
+    <h2 text-align="center">Pytania zawarte w tej ankiecie dotyczą Twoich myśli i odczuć związanych z doświadczanymi w ostatnim
+czasie zdarzeniami. W każdym pytaniu należy wskazać – jak często myślałeś/aś i odczuwałeś/aś w podany sposób. Mimo znacznych podobieństw są to różne pytania i każde z nich należy traktować oddzielnie. Najlepiej na każde pytanie odpowiadać w miarę szybko, wybierając tę odpowiedź, która wydaje się
+najbardziej trafna.</h2></div>
+   <h2 text-align="center">Zapraszam do wypłenienia poniższego formularza.</h2>
    <br/>
    <div class="row">
       <div class="col-md-6">
@@ -113,11 +117,19 @@ to co się zdarzyło?
              {%for first in firsquestion%}
                 <div class="radio">
                     <label><h5>
-                      <input type="radio" name="eleventh_question" value="{{first.title}}" required> {{first.title}}
+                      <input type="radio" name="tenth_question" value="{{first.title}}" required> {{first.title}}
                     </h5></label>                  
                 </div>
               {% endfor %}
-           <h3>14. Czy Twoje zmartwienia dotyczące przyszłości zawodowej wpływają na Twój poziom stresu?
+             <h3>14. Czy czujesz się przytłoczony/-na ilością pracy na studiach?
+             {%for quest in ourquestions%}
+                <div class="radio">
+                    <label><h5>
+                      <input type="radio" name="eleventh_question" value="{{quest.question}}" required> {{quest.question}}
+                    </h5></label>                  
+                </div>
+              {% endfor %}
+           <h3>15. Czy Twoje zmartwienia dotyczące przyszłości zawodowej wpływają na Twój poziom stresu?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -126,7 +138,7 @@ to co się zdarzyło?
                 </div>
               {% endfor %}
 
-              <h3>15. Czy Twoje relacje z innymi studentami wpływają na poziom Twojego stresu?
+              <h3>16. Czy Twoje relacje z innymi studentami wpływają na poziom Twojego stresu?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -134,7 +146,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                <h3>16. Czy czujesz się nadmiernie zobowiązany/a, aby osiągnąć doskonałość akademicką?
+                <h3>17. Czy czujesz się nadmiernie zobowiązany/a, aby osiągnąć doskonałość akademicką?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -142,7 +154,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                   <h3>17. Czy zauważyłeś/łaś u siebie zmiany w poziomie stresu od momentu, gdy rozpocząłeś/łaś studia?
+                   <h3>18. Czy zauważyłeś/łaś u siebie zmiany w poziomie stresu od momentu, gdy rozpocząłeś/łaś studia?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -150,7 +162,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                     <h3>18. Czy otrzymujesz wsparcie emocjonalne ze strony rodziny i/lub przyjaciół?
+                     <h3>19. Czy otrzymujesz wsparcie emocjonalne ze strony rodziny i/lub przyjaciół?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -158,7 +170,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                       <h3>19. Czy stosujesz jakieś metody radzenia sobie ze stresem, takie jak medytacja, ćwiczenia fizyczne, czy rozmowy z bliskimi?
+                       <h3>20. Czy uważasz że stosowanie metod radzenia sobie ze stresem, takich jak medytacja, ćwiczenia fizyczne, czy rozmowy z bliskimi są skuteczne?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -166,7 +178,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                         <h3>20. Czy uważasz, że Twój uniwersytet/uczelnie zapewnia wystarczającą ilość wsparcia i narzędzi do radzenia sobie ze stresem?
+                         <h3>21. Czy uważasz, że Twój uniwersytet/uczelnie zapewnia wystarczającą ilość wsparcia i narzędzi do radzenia sobie ze stresem?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -174,7 +186,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                            <h3>21. Czy w trakcie sesji egzaminacyjnej odczuwasz większy poziom stresu niż podczas innych form zaliczeń?
+                            <h3>22. Czy w trakcie sesji egzaminacyjnej odczuwasz większy poziom stresu niż podczas innych form zaliczeń?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -182,7 +194,7 @@ to co się zdarzyło?
                     </h5></label>                  
                 </div>
               {% endfor %}
-                              <h3>22. Czy uważasz, że przez stres związany ze studiami, częściej sięgasz po różnego rodzaju używki takie jak alkohol, papierosy itp.?
+                              <h3>23. Czy uważasz, że przez stres związany ze studiami, częściej sięgasz po różnego rodzaju używki takie jak alkohol, papierosy itp.?
              {%for quest in ourquestions%}
                 <div class="radio">
                     <label><h5>
@@ -196,5 +208,12 @@ to co się zdarzyło?
          </form>
       </div>
    </div>
+  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-white" style="color:#100527">
+    <hr>
+<footer>Copyright &copy; 2023 Aleksandra Krajna & Martyna Lubowiecka </footer>
+  </div>
 </div>
 {% endblock %}
+                            
+                                
+   
