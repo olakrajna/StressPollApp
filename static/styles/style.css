@@ -1,0 +1,46 @@
+.home img {
+    height: 600px;
+    width: 600px;
+    float: left;
+}
+
+@media only screen and (max-width: 700px)  {
+
+  .home {
+    display: grid;
+  }
+  
+ .home img {
+    height: 350px;
+    width:350px;
+    float: none;   
+}
+
+  .home h1 {
+    font-size: 3rem;
+  }
+
+@media only screen and (min-width: 700px)  {
+.home img {
+    height: 500px;
+    width:500px;
+  float:none;
+}
+  .home {
+    display: grid;
+  }
+
+  .poll {
+    display: grid; 
+    
+  }
+
+  .poll img {
+    float: none;
+    margin-left: 20px;
+  }
+  
+
+
+  
+}
