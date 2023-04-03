@@ -1,46 +1,120 @@
-.home img {
-    height: 600px;
-    width: 600px;
-    float: left;
-}
-
-@media only screen and (max-width: 700px)  {
+@media only screen and (max-width: 320px)  {
 
   .home {
     display: grid;
   }
   
  .home img {
-    height: 350px;
-    width:350px;
+    height: 250px;
+    width: 250px;
     float: none;   
-}
+}  
 
   .home h1 {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
-@media only screen and (min-width: 700px)  {
+  .home p {
+    font-size: 1rem;
+  }
+
+  .poll {
+    display: grid;
+  }
+  
+  .poll img {
+     height:200px; 
+      width:200px;
+  }
+
+  .poll h2 {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .poll h4 {
+    font-size: 0.8rem;
+    text-align: center;
+
+}
+
+@media only screen and (min-width: 321px) and (max-width: 576px) {
 .home img {
-    height: 500px;
-    width:500px;
-  float:none;
+    height: 350px;
+    width: 350px;
+    float:none;
 }
   .home {
     display: grid;
   }
 
+   .home h1 {
+    font-size: 2.5rem;
+  }
+
   .poll {
-    display: grid; 
-    
+    display: grid;     
   }
 
   .poll img {
-    float: none;
-    margin-left: 20px;
+    height:250px; 
+      width:250px;
+  }
+
+ .poll h2 {
+    font-size: 1.5rem;
+    text-align: center;
+
+  }
+
+  .poll h4 {
+    font-size: 1.3rem;
+    text-align: center;
+  
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+
+.home img {
+    height: 400px;
+    width: 400px;
+    float:none;
+} 
+    .home h1 {
+    font-size: 3rem;
+  }
+  .home p {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 1210px) {
+
+  .home img {
+      height: 500px;
+      width: 500px;
+      float:none;
+  } 
+    .home h1 {
+    font-size: 3rem;
+  }
+  .home p {
+    font-size: 2rem;
   }
   
+}
+
+@media only screen and (min-width: 1211px) and (max-width: 1600px) {
+  .home img {
+      height: 500px;
+      width: 500px;
+      float:left;
+  } 
+  
+  
+}
+
+
+
 
 
   
-}
