@@ -4,218 +4,257 @@ Ankieta dotycząca stresu
 {% endblock %}
 {% block content %}
 <div class="poll">
-<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-white module-border-wrap" style="color:#100527">  
-<img src="https://img.freepik.com/free-vector/website-faq-section-user-help-desk-customer-support-frequently-asked-questions-problem-solution-quiz-game-confused-man-cartoon-character_335657-1602.jpg?w=826&t=st=1680477239~exp=1680477839~hmac=ec56362b8bff1cd95c97c3eebabbcd46b778c9c5ae951f04abf8db4af775dd8f" height="250" width="250" class="rounded float-right" />
-    <h2>Pytania zawarte w tej ankiecie dotyczą Twoich myśli i odczuć związanych z doświadczanymi w ostatnim
-czasie zdarzeniami. W każdym pytaniu należy wskazać – jak często myślałeś/aś i odczuwałeś/aś w podany sposób. Mimo znacznych podobieństw są to różne pytania i każde z nich należy traktować oddzielnie. Najlepiej na każde pytanie odpowiadać w miarę szybko, wybierając tę odpowiedź, która wydaje się
-najbardziej trafna.</h2>
-   <h4>Zapraszam do wypłenienia poniższego formularza.</h4>
-   <br/>
-   <div class="row">
-      <div class="col-md-6">
-         <form action="/poll/final" method="post">
-          <h3>1. Płeć:</h3>           
-            {%for gender in genders%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="gender" value="{{gender.gender}}" required> {{gender.gender}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-               <h3>2. Rodzaj studiów:</h3>           
-            {%for study in typesofstudies%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="typesofstudies" value="{{study.typeofstudies}}" required> {{study.typeofstudies}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-              <h3>3. Rok studiów:</h3>           
-            {%for years in yearofstudy%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="yearofstudy" value="{{years.studyyear}}" required> {{years.studyyear}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-            <h3>4. Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?</h3>           
-            {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="first_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-            <h3>5. Jak często w ciągu ostatniego miesiąca czułeś/aś, że ważne sprawy w twoim życiu
-               wymykają ci się spod kontroli?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="second_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                 <h3>6. Jak często w ciągu ostatniego miesiąca odczuwałeś/aś zdenerwowanie i napięcie?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="third_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                     <h3>7. Jak często w ciągu ostatniego miesiąca byłeś/aś przekonany/a, że jesteś w stanie poradzić
-sobie z problemami osobistymi?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="fourth_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-  <h3>8. Jak często w ciągu ostatniego miesiąca czułeś/aś, że sprawy układają się po twojej myśli?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="fifth_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                <h3>9. Jak często w ciągu ostatniego miesiąca stwierdzałeś/aś, że nie radzisz sobie ze wszystkimi obowiązkami?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="sixth_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-  <h3>10. Jak często w ciągu ostatniego miesiąca potrafiłeś/aś opanować swoje rozdrażnienie?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="seventh_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-  <h3>11. Jak często w ciągu ostatniego miesiąca czułeś/aś, że wszystko ci wychodzi?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="eighth_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-      <h3>12. Jak często w ciągu ostatniego miesiąca złościłeś/aś się, ponieważ nie miałeś/aś wpływu na
-to co się zdarzyło?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="ninth_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-
-          <h3>13. Jak często w ciągu ostatniego miesiąca czułeś/aś, że nie możesz przezwyciężyć narastających trudności?
-             {%for first in firsquestion%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="tenth_question" value="{{first.title}}" required> {{first.title}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-             <h3>14. Czy czujesz się przytłoczony/-na ilością pracy na studiach?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="eleventh_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-           <h3>15. Czy Twoje zmartwienia dotyczące przyszłości zawodowej wpływają na Twój poziom stresu?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="twelfth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-
-              <h3>16. Czy Twoje relacje z innymi studentami wpływają na poziom Twojego stresu?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="thirteenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                <h3>17. Czy czujesz się nadmiernie zobowiązany/a, aby osiągnąć doskonałość akademicką?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="fourteenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                   <h3>18. Czy zauważyłeś/łaś u siebie zmiany w poziomie stresu od momentu, gdy rozpocząłeś/łaś studia?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="fifteenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                     <h3>19. Czy otrzymujesz wsparcie emocjonalne ze strony rodziny i/lub przyjaciół?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="sixteenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                       <h3>20. Czy uważasz że stosowanie metod radzenia sobie ze stresem, takich jak medytacja, ćwiczenia fizyczne, czy rozmowy z bliskimi są skuteczne?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="seventeenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                         <h3>21. Czy uważasz, że Twój uniwersytet/uczelnie zapewnia wystarczającą ilość wsparcia i narzędzi do radzenia sobie ze stresem?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="eighteenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                            <h3>22. Czy w trakcie sesji egzaminacyjnej odczuwasz większy poziom stresu niż podczas innych form zaliczeń?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="nineteenth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}
-                              <h3>23. Czy uważasz, że przez stres związany ze studiami, częściej sięgasz po różnego rodzaju używki takie jak alkohol, papierosy itp.?
-             {%for quest in ourquestions%}
-                <div class="radio">
-                    <label><h5>
-                      <input type="radio" name="twentieth_question" value="{{quest.question}}" required> {{quest.question}}
-                    </h5></label>                  
-                </div>
-              {% endfor %}                      
-                  
-
-            <input type="submit" class="btn btn-primary btn-lg">
-         </form>
+   <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-left bg-white module-border-wrap" style="color:#100527">
+      <img src="https://img.freepik.com/free-vector/website-faq-section-user-help-desk-customer-support-frequently-asked-questions-problem-solution-quiz-game-confused-man-cartoon-character_335657-1602.jpg?w=826&t=st=1680477239~exp=1680477839~hmac=ec56362b8bff1cd95c97c3eebabbcd46b778c9c5ae951f04abf8db4af775dd8f" height="250" width="250" class="rounded float-right" />
+      <h2>Pytania zawarte w tej ankiecie dotyczą Twoich myśli i odczuć związanych z doświadczanymi w ostatnim
+         czasie zdarzeniami. W każdym pytaniu należy wskazać – jak często myślałeś/aś i odczuwałeś/aś w podany sposób. Mimo znacznych podobieństw są to różne pytania i każde z nich należy traktować oddzielnie. Najlepiej na każde pytanie odpowiadać w miarę szybko, wybierając tę odpowiedź, która wydaje się
+         najbardziej trafna.
+      </h2>
+      <h4>Zapraszam do wypłenienia poniższego formularza.</h4>
+      <br/>
+      <div class="row">
+         <div class="col-md-6">
+            <form action="/poll/final" method="post">
+               <h3>1. Płeć:</h3>
+               {%for gender in genders%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="gender" value="{{gender.gender}}" required> {{gender.gender}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>2. Rodzaj studiów:</h3>
+               {%for study in typesofstudies%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="typesofstudies" value="{{study.typeofstudies}}" required> {{study.typeofstudies}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>3. Rok studiów:</h3>
+               {%for years in yearofstudy%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="yearofstudy" value="{{years.studyyear}}" required> {{years.studyyear}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>4. Jak często w ciągu ostatniego miesiąca byłeś/aś zdenerwowany/a, ponieważ zdarzyło się coś niespodziewanego?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="first_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>5. Jak często w ciągu ostatniego miesiąca czułeś/aś, że ważne sprawy w twoim życiu wymykają ci się spod kontroli?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="second_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>6. Jak często w ciągu ostatniego miesiąca odczuwałeś/aś zdenerwowanie i napięcie?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="third_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>7. Jak często w ciągu ostatniego miesiąca byłeś/aś przekonany/a, że jesteś w stanie poradzić
+                  sobie z problemami osobistymi?
+               </h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="fourth_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>8. Jak często w ciągu ostatniego miesiąca czułeś/aś, że sprawy układają się po twojej myśli?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="fifth_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>9. Jak często w ciągu ostatniego miesiąca stwierdzałeś/aś, że nie radzisz sobie ze wszystkimi obowiązkami?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="sixth_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>10. Jak często w ciągu ostatniego miesiąca potrafiłeś/aś opanować swoje rozdrażnienie?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="seventh_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>11. Jak często w ciągu ostatniego miesiąca czułeś/aś, że wszystko ci wychodzi?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="eighth_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>12. Jak często w ciągu ostatniego miesiąca złościłeś/aś się, ponieważ nie miałeś/aś wpływu na to co się zdarzyło?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="ninth_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>13. Jak często w ciągu ostatniego miesiąca czułeś/aś, że nie możesz przezwyciężyć narastających trudności?</h3>
+               {%for first in firsquestion%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="tenth_question" value="{{first.title}}" required> {{first.title}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>14. Czy czujesz się przytłoczony/-na ilością pracy na studiach?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="eleventh_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>15. Czy Twoje zmartwienia dotyczące przyszłości zawodowej wpływają na Twój poziom stresu?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="twelfth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>16. Czy Twoje relacje z innymi studentami wpływają na poziom Twojego stresu?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="thirteenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>17. Czy czujesz się nadmiernie zobowiązany/a, aby osiągnąć doskonałość akademicką?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="fourteenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>18. Czy zauważyłeś/łaś u siebie zmiany w poziomie stresu od momentu, gdy rozpocząłeś/łaś studia?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="fifteenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>19. Czy otrzymujesz wsparcie emocjonalne ze strony rodziny i/lub przyjaciół?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="sixteenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>20. Czy uważasz że stosowanie metod radzenia sobie ze stresem, takich jak medytacja, ćwiczenia fizyczne, czy rozmowy z bliskimi są skuteczne?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="seventeenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>21. Czy uważasz, że Twój uniwersytet/uczelnie zapewnia wystarczającą ilość wsparcia i narzędzi do radzenia sobie ze stresem?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="eighteenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>22. Czy w trakcie sesji egzaminacyjnej odczuwasz większy poziom stresu niż podczas innych form zaliczeń?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="nineteenth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}
+               <h3>23. Czy uważasz, że przez stres związany ze studiami, częściej sięgasz po różnego rodzaju używki takie jak alkohol, papierosy itp.?</h3>
+               {%for quest in ourquestions%}
+               <div class="radio">
+                  <label>
+                     <h5>
+                        <input type="radio" name="twentieth_question" value="{{quest.question}}" required> {{quest.question}}
+                     </h5>
+                  </label>
+               </div>
+               {% endfor %}                      
+               <input type="submit" class="btn btn-primary btn-lg">
+            </form>
+         </div>
+      </div>
+      <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-white" style="color:#100527">
+         <hr>
+         <footer>Copyright &copy; 2023 Aleksandra Krajna & Martyna Lubowiecka </footer>
       </div>
    </div>
-  <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-white" style="color:#100527">
-    <hr>
-<footer>Copyright &copy; 2023 Aleksandra Krajna & Martyna Lubowiecka </footer>
-  </div>
-</div>
 </div>
 {% endblock %}
-                   
-                                
-   
